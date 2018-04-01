@@ -77,7 +77,7 @@ TaskX BuildPSM1 @{
             [void]$stringbuilder.AppendLine( "Write-Verbose 'Importing from [$Source\$folder]'" )
             if (Test-Path "$source\$folder")
             {
-                $fileList = Get-ChildItem "$source\$folder\*.ps1" | Where Name -NotLike '*.Tests.ps1'
+                $fileList = Get-ChildItem "$source\$folder\*.ps1" | Where-Object Name -NotLike '*.Tests.ps1'
                 foreach ($file in $fileList)
                 {
                     $shortName = $file.fullname.replace($PSScriptRoot, '')
@@ -139,9 +139,9 @@ TaskX BuildPSD1 @{
         
         $bumpVersionType = 'Patch'
         '    Detecting new features'
-        $fingerprint | Where {$_ -notin $oldFingerprint } | % {$bumpVersionType = 'Minor'; "      $_"}    
+        $fingerprint | Where-Object {$_ -notin $oldFingerprint } | ForEach-Object {$bumpVersionType = 'Minor'; "      $_"}    
         '    Detecting breaking changes'
-        $oldFingerprint | Where {$_ -notin $fingerprint } | % {$bumpVersionType = 'Major'; "      $_"}
+        $oldFingerprint | Where-Object {$_ -notin $fingerprint } | ForEach-Object {$bumpVersionType = 'Major'; "      $_"}
 
         Set-Content -Path .\fingerprint -Value $fingerprint
 
@@ -226,7 +226,7 @@ TaskX CreateHelp @{
     Outputs = {
         process
         {
-            Get-ChildItem $_ | % {'{0}\{1}.md' -f $HelpRoot, $_.basename}
+            Get-ChildItem $_ | ForEach-Object {'{0}\{1}.md' -f $HelpRoot, $_.basename}
         }
     }    
     Jobs    = 'ImportModule', {    
@@ -239,9 +239,9 @@ TaskX CreateHelp @{
                 AlphabeticParamsOrder = $true
                 Verbose               = $true
                 Force                 = $true
-                Command               = Get-Item $_ | % basename
+                Command               = Get-Item $_ | ForEach-Object basename
             }
-            New-MarkdownHelp @mdHelp | % fullname
+            New-MarkdownHelp @mdHelp | ForEach-Object fullname
         }    
     }
 }
@@ -250,7 +250,7 @@ TaskX PackageHelp  @{
     Inputs  = {Get-ChildItem $HelpRoot -Recurse -File}
     Outputs = "$Destination\en-us\$ModuleName-help.xml"
     Jobs    = 'CreateHelp', {
-        New-ExternalHelp -Path $HelpRoot -OutputPath "$Destination\en-us" -force | % fullname
+        New-ExternalHelp -Path $HelpRoot -OutputPath "$Destination\en-us" -force | ForEach-Object fullname
     }
 }
 

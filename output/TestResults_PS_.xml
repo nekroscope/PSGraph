@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="5" errors="0" failures="3" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2018-04-01" time="10:42:24">
+  <environment user="thor" machine-name="US-AUS-PSDEV1" cwd="D:\Powershell\Modules\PSGraph" user-domain="NI" platform="Microsoft Windows Server 2012 R2 Standard|C:\windows|\Device\Harddisk0\Partition4" nunit-version="2.5.8.0" os-version="6.3.9600" clr-version="4.0.30319.42000" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Failure" success="False" time="0.6448" asserts="0" description="Pester">
+    <results>
+      <test-suite type="TestFixture" name="D:\Powershell\Modules\PSGraph\Tests\Project.Tests.ps1" executed="True" result="Failure" success="False" time="0.6448" asserts="0" description="D:\Powershell\Modules\PSGraph\Tests\Project.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="PSScriptAnalyzer rule-sets" executed="True" result="Failure" success="False" time="0.6448" asserts="0" description="PSScriptAnalyzer rule-sets">
+            <results>
+              <test-suite type="TestFixture" name="Script 'D:\Powershell\Modules\PSGraph\PSGraph\Public\Install-GraphViz.ps1'" executed="True" result="Success" success="True" time="0.2668" asserts="0" description="Script 'D:\Powershell\Modules\PSGraph\PSGraph\Public\Install-GraphViz.ps1'">
+                <results>
+                  <test-case description="Should not fail any rules" name="PSScriptAnalyzer rule-sets.Script 'D:\Powershell\Modules\PSGraph\PSGraph\Public\Install-GraphViz.ps1'.Should not fail any rules" time="0.2668" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Script 'D:\Powershell\Modules\PSGraph\PSGraph\PSGraph.psd1'" executed="True" result="Failure" success="False" time="0.3117" asserts="0" description="Script 'D:\Powershell\Modules\PSGraph\PSGraph\PSGraph.psd1'">
+                <results>
+                  <test-case description="PSUseToExportFieldsInManifest" name="PSScriptAnalyzer rule-sets.Script 'D:\Powershell\Modules\PSGraph\PSGraph\PSGraph.psd1'.PSUseToExportFieldsInManifest" time="0.2013" asserts="0" success="False" result="Failure" executed="True">
+                    <failure>
+                      <message>Expected strings to be the same, but they were different.
+Expected length: 0
+Actual length:   111
+Strings differ at index 0.
+Expected: ''
+But was:  'Warning Line 69: Do not use wildcard or $null in this field. Explicitly specify a list for FunctionsToExport.  '
+-----------^</message>
+                      <stack-trace>at &lt;ScriptBlock&gt;, D:\Powershell\Modules\PSGraph\Tests\Project.Tests.ps1: line 20
+20:                         $message | Should Be ""</stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case description="PSUseToExportFieldsInManifest" name="PSScriptAnalyzer rule-sets.Script 'D:\Powershell\Modules\PSGraph\PSGraph\PSGraph.psd1'.PSUseToExportFieldsInManifest" time="0.0861" asserts="0" success="False" result="Failure" executed="True">
+                    <failure>
+                      <message>Expected strings to be the same, but they were different.
+Expected length: 0
+Actual length:   109
+Strings differ at index 0.
+Expected: ''
+But was:  'Warning Line 72: Do not use wildcard or $null in this field. Explicitly specify a list for CmdletsToExport.  '
+-----------^</message>
+                      <stack-trace>at &lt;ScriptBlock&gt;, D:\Powershell\Modules\PSGraph\Tests\Project.Tests.ps1: line 20
+20:                         $message | Should Be ""</stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case description="PSUseToExportFieldsInManifest" name="PSScriptAnalyzer rule-sets.Script 'D:\Powershell\Modules\PSGraph\PSGraph\PSGraph.psd1'.PSUseToExportFieldsInManifest" time="0.0243" asserts="0" success="False" result="Failure" executed="True">
+                    <failure>
+                      <message>Expected strings to be the same, but they were different.
+Expected length: 0
+Actual length:   109
+Strings differ at index 0.
+Expected: ''
+But was:  'Warning Line 78: Do not use wildcard or $null in this field. Explicitly specify a list for AliasesToExport.  '
+-----------^</message>
+                      <stack-trace>at &lt;ScriptBlock&gt;, D:\Powershell\Modules\PSGraph\Tests\Project.Tests.ps1: line 20
+20:                         $message | Should Be ""</stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Script 'D:\Powershell\Modules\PSGraph\PSGraph\PSGraph.psm1'" executed="True" result="Success" success="True" time="0.0663" asserts="0" description="Script 'D:\Powershell\Modules\PSGraph\PSGraph\PSGraph.psm1'">
+                <results>
+                  <test-case description="Should not fail any rules" name="PSScriptAnalyzer rule-sets.Script 'D:\Powershell\Modules\PSGraph\PSGraph\PSGraph.psm1'.Should not fail any rules" time="0.0663" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
