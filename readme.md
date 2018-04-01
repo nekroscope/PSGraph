@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/cgo827o4f74lmf9w/branch/master?svg=true)](https://ci.appveyor.com/project/kevinmarquette/PSGraph/branch/master) [![Documentation Status](https://readthedocs.org/projects/psgraph/badge/?version=latest)](http://psgraph.readthedocs.io/en/latest/?badge=latest)
+[![Build status](https://ci.appveyor.com/api/projects/status/yxicabnr989a5fob/branch/master?svg=true)](https://cisterveyor.com/project/nekroscope/psgraph/branch/master) [![Documentation Status](https://readthedocs.org/projects/psgraph/badge/?version=latest)](http://psgraph.readthedocs.io/en/latest/?badge=latest)
     
 
 # PSGraph
